@@ -1,0 +1,26 @@
+.ce-toolbar__actions{
+    
+}
+
+.ce-toolbar__plus,.ce-toolbar__settings-btn{
+    background-color: gray; 
+   
+}
+
+.ce-popover{
+    background-color: gray; 
+    
+}
+
+.ce-inline-toolbar__toggler-and-button-wrapper{
+    
+}
+
+#rc-editable-input-1{
+    background-color: white !important; 
+}
+
+input{
+    background-color: white !important; 
+
+}
