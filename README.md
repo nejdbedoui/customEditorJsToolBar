@@ -2,6 +2,8 @@
 
 This project aims to create a custom toolbar using Editor.js, a block-styled editor for rich content editing. The toolbar will be expanded with additional functionalities in the future.
 
+![image](https://github.com/nejdbedoui/customEditorJsToolBar/assets/74482153/d96d655f-0d87-408f-947f-81bcdeabebde)
+
 ## Features
 
 - **Custom Toolbar**: Integrates a custom toolbar with Editor.js for applying text styles and managing content blocks.
