@@ -28,11 +28,4 @@ For code review purposes, only the following files are essential:
 - `Editor.js`
 - `Editorjs.js`
 
-## Making Modifications
-
-If you want to make modifications or enhancements to the project, follow these steps:
-1. Create a new branch for your changes: `git checkout -b feature-branch-name`
-2. Make the desired modifications in the relevant files (`App.js`, `Editor.js`, `Editorjs.js`, etc.).
-3. Commit your changes: `git commit -m 'Add new feature or fix issue'`
-4. Push your changes to your branch: `git push origin feature-branch-name`
 
