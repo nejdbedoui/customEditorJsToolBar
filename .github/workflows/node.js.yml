@@ -33,7 +33,7 @@ jobs:
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v1
         with:
-          sonar-token: ${{ secrets.SONAR_TOKEN }}
+          sonar-token: "sqa_956e06b65236dba1f6bab8481c740593383bc768"
           projectBaseDir: ./
           sonar-project-version: 1.0
           sonar-host-url: http://192.168.1.60:9000/
