@@ -25,6 +25,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - run: npm sonar:sonar -Dsonar.login='sqp_98de05fef336acb648d12b6f5f17555dfde47cb9' -Dsonar.host.url='http://192.168.1.60:9000/'
 
   sonarqube-analysis:
     runs-on: ubuntu-latest
