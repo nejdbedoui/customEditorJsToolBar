@@ -2,15 +2,15 @@ name: Node.js CI with Local SonarQube
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "nejdbedoui-patch-3" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "nejdbedoui-patch-3" ]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
+   
     strategy:
       matrix:
         node-version: [18.x]
@@ -25,13 +25,13 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-
+  
   sonarqube-analysis:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: SonarQube Scan
-        uses: SonarSource/sonar-scanner-cli@master
-        with:
-          sonar-token: ${{ secrets.SONAR_TOKEN }}
-          projectBaseDir: ./  # Adjust this if necessary
+      - uses: actions/checkout@v2
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_CLOUD_HOST_URL }}
