@@ -2,9 +2,9 @@ name: Node.js CI with Local SonarQube
 
 on:
   push:
-    branches: [ "master","nejdbedoui-patch-3" ]
+    branches: [ "master", "nejdbedoui-patch-3" ]
   pull_request:
-    branches: [ "master","nejdbedoui-patch-3" ]
+    branches: [ "master", "nejdbedoui-patch-3" ]
 
 jobs:
   build:
@@ -33,7 +33,9 @@ jobs:
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v1
         with:
-          sonar-token: "sqa_956e06b65236dba1f6bab8481c740593383bc768"
-          projectBaseDir: ./
-          sonar-project-version: 1.0
-          sonar-host-url: http://192.168.1.60:9000/
+          args: >
+            -Dsonar.projectKey=my_project_key
+            -Dsonar.sources=.
+            -Dsonar.host.url=http://192.168.1.60:9000/
+            -Dsonar.login=sqa_956e06b65236dba1f6bab8481c740593383bc768
+            -Dsonar.projectVersion=1.0
