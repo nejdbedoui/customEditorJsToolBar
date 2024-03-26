@@ -31,10 +31,11 @@ jobs:
     permissions: read-all
     needs: build
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarQube Scan
-        run: mvn sonar:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.host.url=http://192.168.1.60:9000/
+        uses: sonarsource/sonarqube-scan-action@master
         env:
+          SONAR_HOST_URL: 'http://192.168.1.60:9000/'
           SONAR_TOKEN: 'sqp_98de05fef336acb648d12b6f5f17555dfde47cb9'
