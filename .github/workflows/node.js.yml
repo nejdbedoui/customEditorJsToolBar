@@ -31,7 +31,9 @@ jobs:
     needs: build
     steps:
       - name: SonarQube Scan
-        uses: SonarSource/sonar-scanner-cli@master
+        uses: SonarSource/sonarqube-scan-action@v1
         with:
           sonar-token: ${{ secrets.SONAR_TOKEN }}
-          projectBaseDir: ./  # Adjust this if necessary
+          projectBaseDir: ./
+          sonar-project-version: 1.0
+          sonar-host-url: http://192.168.1.60:9000/
