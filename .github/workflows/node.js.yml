@@ -2,9 +2,9 @@ name: Node.js CI with Local SonarQube
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master","nejdbedoui-patch-3" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master","nejdbedoui-patch-3" ]
 
 jobs:
   build:
