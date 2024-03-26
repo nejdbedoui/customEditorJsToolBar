@@ -25,17 +25,16 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    - run: npm sonar:sonar -Dsonar.login='sqp_98de05fef336acb648d12b6f5f17555dfde47cb9' -Dsonar.host.url='http://192.168.1.60:9000/'
-
+  
   sonarqube-analysis:
     runs-on: ubuntu-latest
     permissions: read-all
     needs: build
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - uses: sonarsource/sonarqube-scan-action@master
+      - name: SonarQube Scan
+        run: mvn sonar:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.host.url=http://192.168.1.60:9000/
         env:
           SONAR_TOKEN: 'sqp_98de05fef336acb648d12b6f5f17555dfde47cb9'
-          SONAR_HOST_URL: 'http://192.168.1.60:9000/'
